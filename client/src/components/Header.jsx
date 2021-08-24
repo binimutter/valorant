@@ -1,11 +1,15 @@
 import React from 'react';
+import { Image } from 'react-native';
+
+const vIcon = require('./images/vIcon.png');
 
 import './style/Header.css';
 
 function Header() {
   return (
     <div className="header">
-      <img src="file:///Users/ubinjung/Desktop/valorant%20logo.png" alt="logo" className="icon" />
+      <Image className="icon" source={require('../images/vIcon.png')} />
+      {/* <img src={vIcon} className="icon" /> */}
       <h1 className="title">Valorant Weapons</h1>
     </div>
   );

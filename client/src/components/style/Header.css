@@ -21,6 +21,10 @@
   margin-left: 20px;
 }
 
+body {
+  background: transparent;
+}
+
 .title {
   font-family: 'VALORANT', sans-serif;
 }

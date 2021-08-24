@@ -7,6 +7,9 @@ module.exports = {
     path:path.join(__dirname, "/client/dist"),
     filename: 'index.bundle.js',
   },
+  // externals: {
+  //   "react-native": true
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join("client", "src", "index.html"),
@@ -43,4 +46,9 @@ module.exports = {
       template: path.join("client", "src", "index.html"),
     }),
   ],
+  resolve: {
+    alias: {
+      'react-native$': 'react-native-web'
+    }
+  },
 }
