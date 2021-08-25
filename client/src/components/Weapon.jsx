@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Carousel from 'react-bootstrap/Carousel';
 
-import AgentInfo from './AgentInfo.jsx';
-import './style/Agents.css';
+import WeaponInfo from './WeaponInfo.jsx';
+import './style/Weapons.css';
 
-const Agent = ({ agent }) => {
+const Weapon = ({ weapon }) => {
   const [showDescription, setShowDescription] = useState(false);
 
   return (
-    <div className="agent-prof" key={agent.uuid}>
-      <img className="agent-icon" src={agent.displayIcon} />
-      <button className="agentName" onClick={() => setShowDescription(!showDescription)}>{agent.displayName}</button>
+    <div className="weapon-prof" key={weapon.uuid}>
+      <img className="weapon-icon" src={weapon.displayIcon} />
+      <button className="weapon-name" onClick={() => setShowDescription(!showDescription)}>{weapon.displayName}</button>
       {showDescription ?
-        <AgentInfo
-          agent={agent}
+        <WeaponInfo
+          weapon={weapon}
         />
         : null}
     </div>
@@ -34,5 +33,5 @@ const Agent = ({ agent }) => {
   )
 }
 
-export default Agent;
+export default Weapon;
 

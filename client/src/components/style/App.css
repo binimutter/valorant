@@ -1,3 +1,9 @@
 .appBody {
   background-color: rgba(16,24,35,255);
 }
+
+.lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

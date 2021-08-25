@@ -1,0 +1,50 @@
+.maps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.maps-title {
+  font-family: 'VALORANT', sans-serif;
+  color: white;
+  margin: 20px;
+  font-size: xx-large;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0,6);
+}
+
+.map-modal-container {
+  position: fixed;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal-close-btn {
+  border: none;
+  background: transparent;
+  font-size: 50px;
+  margin-left: 20px;
+  color: red;
+}
