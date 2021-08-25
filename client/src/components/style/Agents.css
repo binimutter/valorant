@@ -1,0 +1,59 @@
+@import url('http://fonts.cdnfonts.com/css/valorant?styles=64778');
+
+.agent-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.agentTitle {
+  font-family: 'VALORANT', sans-serif;
+  color: white;
+  margin: 20px;
+  font-size: xx-large;
+}
+
+.agent-prof {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 10px;
+}
+
+.agentName {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'VALORANT', sans-serif;
+  color: white;
+  margin-bottom: 15px;
+  font-size: x-large;
+}
+
+.agent-icon {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.agentName:hover {
+  font-weight: bold;
+}
+
+.agent-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.agent-info {
+  display: flex;
+}
+
+.agent-desc {
+  font-family: 'VALORANT', sans-serif;
+}
+
+.agent-role {
+  font-family: 'VALORANT', sans-serif;
+}

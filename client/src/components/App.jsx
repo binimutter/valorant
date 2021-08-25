@@ -1,16 +1,16 @@
 import React from 'react';
 
 import Header from './Header.jsx';
-import WeaponClass from './WeaponClass.jsx';
+import AgentList from './AgentList.jsx';
 
-// import './App.css';
+import './style/App.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <main>
-        <WeaponClass />
+      <main className="appBody">
+        <AgentList />
       </main>
     </div>
   );
