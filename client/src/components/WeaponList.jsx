@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Weapon from './Weapon.jsx';
@@ -7,18 +7,25 @@ import './style/Weapons.css';
 const WeaponList = () => {
   const [weapons, setWeapons] = useState([]);
 
-  var options = {
-    method: 'GET',
-    url: 'https://valorant-api.com/v1/weapons',
-  };
-
-  axios.request(options)
-    .then(function (response) {
-      setWeapons(response.data.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  useEffect(() => {
+    let mounted = true;
+    var options = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      url: 'https://valorant-api.com/v1/weapons',
+    };
+    axios.request(options)
+      .then(function (response) {
+        // console.log(response);
+        if (mounted) {
+          setWeapons(response.data.data);
+        }
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    return () => mounted = false;
+  }, []);
 
   return (
     <div className="weapon-container">

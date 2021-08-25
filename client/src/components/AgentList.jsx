@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Agent from './Agent.jsx';
@@ -7,19 +7,25 @@ import './style/Agents.css';
 const AgentList = () => {
   const [agents, setAgents] = useState([]);
 
-  var options = {
-    method: 'GET',
-    url: 'https://valorant-api.com/v1/agents',
-  };
-
-  axios.request(options)
-    .then(function (response) {
-      setAgents(response.data.data);
-      // console.log(agents);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  useEffect(() => {
+    let mounted = true;
+    var options = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      url: 'https://valorant-api.com/v1/agents',
+    };
+    axios.request(options)
+      .then(function (response) {
+        // console.log(response);
+        if (mounted) {
+          setAgents(response.data.data);
+        }
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    return () => mounted = false;
+  }, []);
 
   return (
     <div className="agent-container">
