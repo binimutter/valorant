@@ -48,3 +48,8 @@
   margin-left: 20px;
   color: red;
 }
+
+.modal-close-bth:hover {
+  border: none;
+  font-weight: bold;
+}

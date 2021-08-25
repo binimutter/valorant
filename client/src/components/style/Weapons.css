@@ -37,6 +37,7 @@
 
 .weapon-name:hover {
   color: red;
+  border: none;
 }
 
 .weapon-list {
@@ -79,6 +80,11 @@
   margin-left: 200px;
   color: red;
   cursor: pointer;
+}
+
+.modal-close-bth:hover {
+  border: none;
+  font-weight: bold;
 }
 
 .modal-container {

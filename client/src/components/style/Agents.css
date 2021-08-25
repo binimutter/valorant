@@ -38,6 +38,7 @@
 
 .agentName:hover {
   color: red;
+  border: none;
 }
 
 .agent-list {
@@ -84,6 +85,11 @@
   margin-left: 200px;
   color: red;
   cursor: pointer;
+}
+
+.modal-close-bth:hover {
+  border: none;
+  font-weight: bold;
 }
 
 .agent-modal-container {
