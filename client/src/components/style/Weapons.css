@@ -36,7 +36,7 @@
 }
 
 .weapon-name:hover {
-  font-weight: bold;
+  color: red;
 }
 
 .weapon-list {
@@ -52,8 +52,49 @@
 
 .weapon-stats {
   font-family: 'VALORANT', sans-serif;
+  color: white;
 }
 
-/* .agent-role {
-  font-family: 'VALORANT', sans-serif;
-} */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0,6);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal-close-btn {
+  border: none;
+  background: transparent;
+  font-size: 50px;
+  margin-left: 200px;
+  color: red;
+  cursor: pointer;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  background-color: black;
+  border-radius: 20px;
+  padding: 20px;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}

@@ -7,30 +7,30 @@ import './style/Agents.css';
 
 const Agent = ({ agent }) => {
   const [showDescription, setShowDescription] = useState(false);
+  const [description, setDescription] = useState(null);
+  const [role, setRole] = useState(null);
+  const [util, setUtil] = useState(null);
+
+  const showModal = (description, role, util) => {
+    setShowDescription(true);
+    setDescription(description);
+    setRole(role);
+    setUtil(util);
+  }
+
+  const hideModal = () => {
+    setShowDescription(false);
+    setDescription(null);
+    setRole(null);
+    setUtil(null);
+  }
 
   return (
     <div className="agent-prof" key={agent.uuid}>
       <img className="agent-icon" src={agent.displayIcon} />
-      <button className="agentName" onClick={() => setShowDescription(!showDescription)}>{agent.displayName}</button>
-      {showDescription ?
-        <AgentInfo
-          agent={agent}
-        />
-        : null}
+      <button className="agentName" onClick={() => {showModal(agent.description, agent.role, agent.abilities)}}>{agent.displayName}</button>
+      <AgentInfo show={showDescription} handleClose={hideModal} agent={agent} description={description} role={role} util={util} />
     </div>
-    // <Carousel>
-    //   <Carousel.Item>
-    //     <img
-    //       className="d-block w-100"
-    //       src={agent.displayIcon}
-    //       alt="First slide"
-    //     />
-    //     <Carousel.Caption>
-    //       <h3>{agent.displayName}</h3>
-    //       {/* <p>{agent.role.displayName}</p> */}
-    //     </Carousel.Caption>
-    //   </Carousel.Item>
-    // </Carousel>
   )
 }
 

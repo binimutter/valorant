@@ -6,30 +6,36 @@ import './style/Weapons.css';
 
 const Weapon = ({ weapon }) => {
   const [showDescription, setShowDescription] = useState(false);
+  const [category, setCategory] = useState(null);
+  const [cost, setCost] = useState(null);
+  const [ms, setMs] = useState(null);
+  const [equip, setEquip] = useState(null);
+  const [reload, setReload] = useState(null);
+
+  const showModal = (category, cost, ms, equip, reload) => {
+    setShowDescription(true);
+    setCategory(category);
+    setCost(cost);
+    setMs(ms);
+    setEquip(equip);
+    setReload(reload);
+  }
+
+  const hideModal = () => {
+    setShowDescription(false);
+    setCategory(null);
+    setCost(null);
+    setMs(null);
+    setEquip(null);
+    setReload(null);
+  }
 
   return (
     <div className="weapon-prof" key={weapon.uuid}>
       <img className="weapon-icon" src={weapon.displayIcon} />
-      <button className="weapon-name" onClick={() => setShowDescription(!showDescription)}>{weapon.displayName}</button>
-      {showDescription ?
-        <WeaponInfo
-          weapon={weapon}
-        />
-        : null}
+      <button className="weapon-name" onClick={() => {showModal(weapon.shopData.categoryText, weapon.shopData.cost, weapon.weaponStats.magazineSize, weapon.weaponStats.equipTimeSeconds, weapon.weaponStats.reloadTimeSeconds)}}>{weapon.displayName}</button>
+      <WeaponInfo show={showDescription} handleClose={hideModal} weapon={weapon} category={category} cost={cost} ms={ms} equip={equip} reload={reload} />
     </div>
-    // <Carousel>
-    //   <Carousel.Item>
-    //     <img
-    //       className="d-block w-100"
-    //       src={agent.displayIcon}
-    //       alt="First slide"
-    //     />
-    //     <Carousel.Caption>
-    //       <h3>{agent.displayName}</h3>
-    //       {/* <p>{agent.role.displayName}</p> */}
-    //     </Carousel.Caption>
-    //   </Carousel.Item>
-    // </Carousel>
   )
 }
 
