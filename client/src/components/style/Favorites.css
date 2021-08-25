@@ -1,0 +1,14 @@
+@import url('http://fonts.cdnfonts.com/css/valorant?styles=64778');
+
+.fav-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fav-title {
+  font-family: 'VALORANT', sans-serif;
+  color: white;
+  margin: 20px;
+  font-size: xx-large;
+}
