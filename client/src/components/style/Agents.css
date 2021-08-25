@@ -26,7 +26,8 @@
   cursor: pointer;
   font-family: 'VALORANT', sans-serif;
   color: white;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
+  padding-top: 19.5px;
   font-size: x-large;
 }
 
