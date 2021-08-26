@@ -31,14 +31,14 @@ const WeaponList = () => {
     <div className="weapon-container">
       <h2 className="weapon-title">Weapons:</h2>
       <div className="weapon-list">
-        {
-          weapons.map((weapon) =>
+        { weapons
+          ? weapons.map((weapon) =>
             <Weapon
               weapon={weapon}
               key={weapon.uuid}
             />
           )
-        }
+          : 'Loading..'}
       </div>
     </div>
   )

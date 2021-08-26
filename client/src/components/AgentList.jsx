@@ -31,14 +31,14 @@ const AgentList = () => {
     <div className="agent-container">
       <h2 className="agentTitle">Agents:</h2>
       <div className="agent-list">
-        {
-          agents.map((agent) =>
+        { agents
+          ? agents.map((agent) =>
             <Agent
               agent={agent}
               key={agent.uuid}
             />
           )
-        }
+          : 'Loading..'}
       </div>
     </div>
   )
