@@ -4,7 +4,7 @@ import axios from 'axios';
 import Weapon from './Weapon.jsx';
 import './style/Weapons.css';
 
-const WeaponList = () => {
+const WeaponList = ({change}) => {
   const [weapons, setWeapons] = useState([]);
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const WeaponList = () => {
             <Weapon
               weapon={weapon}
               key={weapon.uuid}
+              change={change}
             />
           )
           : 'Loading..'}

@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import './style/Weapons.css';
 
-const WeaponInfo = ({ show, handleClose, weapon, category, cost, ms, equip, reload }) => {
+const WeaponInfo = ({ show, handleClose, add, weapon, category, cost, ms, equip, reload, fav }) => {
   const toggleModal = show ? "modal display-block" : "modal display-none";
 
   return (
     <div className={toggleModal}>
       <div className="modal-container">
-      <button className="modal-close-btn" type="button" onClick={handleClose} aria-label="modal close button">
-        <FontAwesomeIcon icon={faTimes} />
-      </button>
+        <div className="agent-btn-container">
+          <button className="modal-close-btn" type="button" onClick={handleClose} aria-label="modal close button">
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
+          <button className="modal-add-btn" type="button" onClick={() => {
+            add(fav)
+          }} aria-label="modal add button">
+            <FontAwesomeIcon icon={faHeart} />
+          </button>
+        </div>
         {category ?
           <p className="weapon-stats">Category:{' '}{category}</p>
           : null}

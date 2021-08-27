@@ -92,6 +92,20 @@
   font-weight: bold;
 }
 
+.modal-add-btn {
+  border: none;
+  background: transparent;
+  font-size: 50px;
+  margin-left: 200px;
+  color: red;
+  cursor: pointer;
+}
+
+.modal-add-bth:hover {
+  border: none;
+  font-weight: bold;
+}
+
 .agent-modal-container {
   display: flex;
   flex-direction: column;
@@ -110,6 +124,12 @@
   overflow-y: scroll;
   scroll-behavior: smooth;
   text-align: left !important;
+}
+
+.agent-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 /* .agent-util {

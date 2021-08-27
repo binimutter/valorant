@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import './style/Agents.css';
 
-const AgentInfo = ({ show, handleClose, agent, description, role, util }) => {
+const AgentInfo = ({ show, handleClose, add, agent, description, role, util, fav }) => {
   const toggleModal = show ? "modal display-block" : "modal display-none";
 
   return (
     <div className={toggleModal}>
       <div className="agent-modal-container">
-        <button className="modal-close-btn" type="button" onClick={handleClose} aria-label="modal close button">
-          <FontAwesomeIcon icon={faTimes} />
-        </button>
+        <div className="agent-btn-container">
+          <button className="modal-close-btn" type="button" onClick={handleClose} aria-label="modal close button">
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
+          <button className="modal-add-btn" type="button" onClick={() => {
+            add(fav)
+          }} aria-label="modal add button">
+            <FontAwesomeIcon icon={faHeart} />
+          </button>
+        </div>
         {description ?
           <p className="agent-desc">{description}</p>
           : null}

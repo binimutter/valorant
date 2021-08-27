@@ -4,7 +4,7 @@ import axios from 'axios';
 import Agent from './Agent.jsx';
 import './style/Agents.css';
 
-const AgentList = () => {
+const AgentList = ({change}) => {
   const [agents, setAgents] = useState([]);
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const AgentList = () => {
             <Agent
               agent={agent}
               key={agent.uuid}
+              change={change}
             />
           )
           : 'Loading..'}
